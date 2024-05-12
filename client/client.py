@@ -36,7 +36,13 @@ class ChatClient:
         if not server_ip:
             server_ip = "127.0.0.1"
         if not server_port:
-            server_port = 23
+            server_port = "23"
+
+        # port 번호가 숫자인지 확인
+        if not server_port.isdigit():
+            messagebox.showerror("Error", "Invalid port number")
+            return
+
 
         server_port = int(server_port)
 
