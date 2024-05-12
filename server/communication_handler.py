@@ -3,9 +3,7 @@ def send_socket(client_socket, message):
     client_socket.send(response.encode('utf-8'))
 
 
-
 def receive_socket(client_socket):
-    client_socket.send("Enter: ".encode('utf-8'))
     data = client_socket.recv(1024)
     if not data:
         return None
